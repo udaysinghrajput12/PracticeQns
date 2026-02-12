@@ -1,0 +1,78 @@
+﻿using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int num1;
+
+
+        // Input first number with validation
+        Console.WriteLine("Enter the first number:");
+        while (!int.TryParse(Console.ReadLine(), out num1))
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer:");
+        }
+
+        // Input second number with validation
+        Console.WriteLine("Enter the second number:");
+        int num2;
+        while (!int.TryParse(Console.ReadLine(), out num2))
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer:");
+        }
+
+        // Arithmetic operations
+        int sum = num1 + num2;
+        int difference = num1 - num2;
+        int product = num1 * num2;
+
+        // Division handling
+        double quotient = 0;
+        bool divisionByZero = false;
+
+        if (num2 != 0)
+        {
+            quotient = (double)num1 / num2;
+        }
+        else
+        {
+            divisionByZero = true;
+        }
+        /*
+
+       Declare and Initialize Variables
+
+Define two integers, num1 and num2, with appropriate values.
+Declare variables sum, difference, product, and quotient to store results of operations.
+Use a bool variable divisionByZero to track whether a division by zero is attempted.
+Perform Addition, Subtraction, and Multiplication
+
+Calculate the sum, difference, and product using standard arithmetic operators (+, -, *).
+Store the results in the respective variables.
+Handle Division Operation Safely
+
+Before performing division, check if the divisor (num2) is not zero.
+If num2 is non-zero, perform the division and cast the result to double for precise results.
+If num2 is zero, set divisionByZero to true and avoid performing the division to prevent runtime exceptions.
+Output Results (Optional)
+
+Print the results of the arithmetic operations to the console.
+If divisionByZero is true, display an appropriate message instead of the quotient.
+       */
+
+        // Print results
+        Console.WriteLine("The sum is: " + sum);
+        Console.WriteLine("The difference is: " + difference);
+        Console.WriteLine("The product is: " + product);
+
+        if (!divisionByZero)
+        {
+            Console.WriteLine("The quotient is: " + quotient);
+        }
+        else
+        {
+            Console.WriteLine("Error: Division by zero is not allowed.");
+        }
+    }
+}
